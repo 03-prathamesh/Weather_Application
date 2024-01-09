@@ -20,7 +20,7 @@ async function  checkWeather(city){
     const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}`;
     const weather_data=await fetch(`${url}`);
     let  data= await weather_data.json();
-
+    // console.log(data);
 
     if(data.cod===`404`){
         img.src="images/404.png";
@@ -30,7 +30,7 @@ async function  checkWeather(city){
         // alert('error');
         return 
     }
-    // console.log(data);
+   
     lnf.style.display="none";
     weather.style.display="flex";
     weather_temp.style.display="flex";
