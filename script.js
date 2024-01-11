@@ -11,6 +11,7 @@ let lnf=document.querySelector(".location-not-found");
 let weather=document.querySelector(".weather-body");
 let weather_temp=document.querySelector(".weather-temp");
 
+let check =document.querySelector("#logocheck");
 
 
 
@@ -20,7 +21,7 @@ async function  checkWeather(city){
     const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}`;
     const weather_data=await fetch(`${url}`);
     let  data= await weather_data.json();
-    // console.log(data);
+    console.log(data);
 
     if(data.cod===`404`){
         img.src="images/404.png";
@@ -35,15 +36,33 @@ async function  checkWeather(city){
     weather.style.display="flex";
     weather_temp.style.display="flex";
 
+  
 
-    
-    temp.innerHTML=`${Math.round(data.main.temp-273.15)}°C`;
+    const cel_temp=Math.round(data.main.temp-273.15);
+    temp.innerHTML=`${cel_temp}°C`;
+    const f_temp = Math.round((cel_temp * 9/5) + 32);
     des.innerHTML=`${data.weather[0].description}`;
     humidity.innerHTML=`${data.main.humidity} %`;
     wind.innerHTML=`${data.wind.speed}Km/H`;
 
 
-    
+      
+check.addEventListener("change",()=>{
+      console.log(check);
+    // if(check.checked){
+    //    document.body.classList.remove("dark-mode");
+    // }
+    // else{
+    //    document.body.classList.add("dark-mode");
+
+    // }
+    if(check.checked){
+       temp.innerHTML=`${f_temp}°F`;
+    }
+    else{
+        temp.innerHTML=`${cel_temp}°C`;
+    }
+})
 
    
     if(data.weather[0].main=="Clouds"){
@@ -71,3 +90,4 @@ bt.addEventListener("click",()=>{
    checkWeather(locat.value);
 
 });
+
