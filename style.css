@@ -5,25 +5,45 @@
 }
 
 body{
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+   
+    flex-direction: column; */
   /* width: auto; */
     background-color: black;
     color: white;
-   
+    /* height: 5000px; */
     /* background-image: ; */
     
 }
 
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid white; */
+    height: 55px;
+    /* position: relative; */
+    margin-top: 10px;
+    
+}
+
+.date_time{
+    text-align: center;
+    /* border: 2px solid white; */
+    /* position: absolute; */
+    /* top: 10px; */
+    /* margin-left: 500px; */
+    /* position: absolute;/ */
+    
+}
 .logo{
     width: 50px;
     height: 50px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-
+    margin-left: 10px;
+    /* position: absolute; */
+   
 }
 
 /* .dark-mode{
@@ -32,8 +52,10 @@ body{
 
 #logocheck{
     visibility: hidden;
+   
 }
 .toggle-ball{
+    /* margin-top: 0.39px; */
     width:1.8rem;
     height: 1.8rem;
     background-color: blue;
@@ -42,9 +64,9 @@ body{
     margin-left: 1px;
     margin-top: 0.6px;
     position: absolute;
-    left: 0.3px;
+    left: 0.8px;
     bottom: 0.7px;
-    top: opx;
+    top: 0.6px;
 }
 
 #logocheck:checked +  .toggle-label .toggle-ball{
@@ -52,20 +74,26 @@ body{
       background-color: yellow ;
 }
 
+.c{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 label{
     height: 30px;
     width: 65px;
     background-color: white;
     display: block;
-    position: absolute;
-    top: 25px;
-    right: 30px;
-/* position: relative; */
+    /* position: absolute; */
+   
+position: relative;
     border-radius: 30px;
     display: flex;
     justify-content: center;
     justify-content: space-evenly;
     align-items: center;
+    margin-right: 10px;
 }
 .container{
     /* height: 400px; */
@@ -75,6 +103,9 @@ label{
     background: linear-gradient(to top, #09203f 0%, #537895 100%);
     border-radius: 30px;
     box-shadow: 0 0 20px rgba(231, 223, 223, 0.4);
+    margin-top: 4rem;
+    margin-bottom: 50px;
+    margin-left: 100px;
 
 }
 span{
@@ -125,6 +156,21 @@ input{
     /* border: 2px solid black; */
     text-align: center;
     /* margin-top: 30px; */
+}
+
+.date_time{
+    /* border: 2px solid wheat; */
+    padding: 10px;
+    /* width: 300px; */
+    /* display: inline; */
+    /* display: inline-block; */
+    /* width: 50%; */
+    /* text-align: center; */
+    /* margin:auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
 }
 
 .weather-box .tmp{
@@ -229,7 +275,7 @@ button{
 h2{
     text-align: center;
     margin-top: 30px;
-    /* padding-top: 25px; */
+    padding-top: 25px;
     margin-bottom: 7px;
     font-weight: bold;
     /* text-decoration: underline; */
@@ -245,7 +291,7 @@ h2{
 #w-img{
     width: 55%;
     height: 60%;
-    /* margin-bottom: 300px; */
+    margin-bottom: 30px;
 }
 
 h3{
@@ -253,6 +299,18 @@ h3{
     color: #6b6b6b;
     margin-top: 40px;
     margin-bottom: 30px;
+}
+
+.dt{
+    /* border: 2px solid white; */
+    padding: 10px;
+    border-radius: 2rem;
+    margin-left: 60px;
+    font-weight: bold;
+    /* background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%); */
+    /* background-color: rebeccapurple; */
+    background: linear-gradient( 112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2% );
+
 }
 
 

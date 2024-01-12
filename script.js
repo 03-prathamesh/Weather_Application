@@ -10,7 +10,7 @@ let img=document.querySelector(".weather-image");
 let lnf=document.querySelector(".location-not-found");
 let weather=document.querySelector(".weather-body");
 let weather_temp=document.querySelector(".weather-temp");
-
+let date=document.querySelector(".dt");
 let check =document.querySelector("#logocheck");
 
 
@@ -91,3 +91,20 @@ bt.addEventListener("click",()=>{
 
 });
 
+let currentDate=new Date();
+// console.log(myDate.toString());
+// const formattedDateTime = currentDate.toLocaleString('en-US');
+// console.log(formattedDateTime);
+const options = { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' ,
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric'
+};
+
+const formattedDateTime = currentDate.toLocaleDateString('en-US', options);
+// setInterval(updateDateTime, 1000);
+date.innerHTML=formattedDateTime;
