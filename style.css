@@ -318,8 +318,12 @@ h3{
 /* make responsive web-design by adding the media querry */
 @media only screen and (max-width:455px){
 
+    .dt{
+        margin-left: 0px;
+    }
 .container{
     width: 280px;
+    margin-left: 0px;
 }
 
 button{
