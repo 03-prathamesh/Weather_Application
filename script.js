@@ -12,13 +12,16 @@ let weather=document.querySelector(".weather-body");
 let weather_temp=document.querySelector(".weather-temp");
 let date=document.querySelector(".dt");
 let check =document.querySelector("#logocheck");
+let pop=document.querySelector(".pop-up1");
 
-
+const past_data="https://history.openweathermap.org/data/2.5/history/city?q={city name},{country code}&type=hour&start={start}&end={end}&appid={API key}";
 
 async function  checkWeather(city){
 
     const API_key="6ae63a96238761312af288cbf9243f49";
     const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}`;
+    const past_data_url=`https://history.openweathermap.org/data/2.5/history/city?lat={lat}&lon={lon}&type=hour&start={start}&end={end}&appid=${API_key}`;
+
     const weather_data=await fetch(`${url}`);
     let  data= await weather_data.json();
     console.log(data);
@@ -86,7 +89,16 @@ check.addEventListener("change",()=>{
 }
 
 bt.addEventListener("click",()=>{
+    // pop.classList.remove("pop-up2");
 
+
+   if(locat.value==""){
+       pop.classList.remove("pop-up2");
+       return;
+   }
+   else{
+       pop.classList.add("pop-up2");
+   }
    checkWeather(locat.value);
 
 });
@@ -108,3 +120,4 @@ const options = {
 const formattedDateTime = currentDate.toLocaleDateString('en-US', options);
 // setInterval(updateDateTime, 1000);
 date.innerHTML=formattedDateTime;
+
